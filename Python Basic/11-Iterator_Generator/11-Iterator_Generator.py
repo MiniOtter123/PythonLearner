@@ -80,31 +80,3 @@ print("===[2.3 Range()]===")
 for num in range(0, 10):
     print(num)
 
-# 2.4 Class Generator
-print("===[2.4 Class Generator]===")
-
-
-class MyGenerator:
-
-    def __init__(self):
-        self.start = 1
-        self.end = 5
-
-    def __iter__(self):
-        self.current = self.start
-        return self
-
-    def __next__(self):
-        if self.current < self.end:
-            value = self.current
-            self.current += 1
-            return value
-        else:
-            print("StopIteration")
-            raise StopIteration
-
-
-gen = MyGenerator()
-
-for item in gen:
-    print(item)
